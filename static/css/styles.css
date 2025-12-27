@@ -1,0 +1,44 @@
+.head_bg{
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/beige-green-building-day.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.nav_btn{
+    background-color: rgb(255, 255, 90);
+    border-radius: 20px;
+    border: none;
+    color: black;
+}
+.nav_links:hover{
+    color: rgb(255, 255, 90);
+    transition: .4s;
+}
+.nav_nav{
+    border-radius: 15px;
+    height: 100px;
+    width: 100%;
+    max-width: 35rem;
+    min-width: 0;
+    gap: 1rem;
+}
+.nav_bg{
+    background-color: white;
+    transition: .4s;
+    box-shadow: 0 0 20px grey;
+}
+.nav_tp{
+    background-color: transparent;
+    transition: .4s;
+}
+.house{
+    box-shadow: 0 0 10px;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 10px;
+}
+.house img{
+    border-radius: 10px;
+    height: 25rem;
+}

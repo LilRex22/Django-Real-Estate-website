@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+    <header class="head_bg">
+        <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 90vh;">
+            <h1 class="text-center mt-5 mb-3 display-3 fw-bold" style="color: rgb(48, 48, 48); padding: 50px 0 20px 0;">Your Reliable Ally in <br>Worldwide Real Estate</h1>
+
+            <form method="get" class="form-control d-flex justify-content-around p-3 nav_nav">
+                <!-- select option -->
+                <div class="form-group">
+                    <label for="Type" class="fw-bold">Type:</label>
+                    <select name="type" id="Type" class="form-control">
+                        <option value="duplex">Duplex</option>
+                        <option value="bungalow">Bungalow</option>
+                        <option value="apartment">Apartment</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Price" class="fw-bold">Price:</label>
+                    <select name="price" id="Price" class="form-control">
+                        <option value="100000">&#8358 100,000 - &#8358 500,000</option>
+                        <option value="500000">&#8358 500,000 - &#8358 1,000,000</option>
+                        <option value="1000000">&#8358 1,000,000 - &#8358 5,000,000</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Location" class="fw-bold">Location:</label>
+                    <select name="location" id="Location" class="form-control">
+                        <option value="abia">Abia</option>
+                        <option value="anambra">Anambra</option>
+                        <option value="delta">Delta</option>
+                        <option value="port-harcourt">Port-harcourt</option>
+                        <option value="lagos">Lagos</option>
+                        <option value="abuja">Abuja</option>
+                        <option value="jos">Jos</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success d-flex" style="height: 40px; margin-top: 15px;"><i class="bi bi-search me-2"></i>Search</button>
+            </form>
+        </div>
+    </header>
+
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10 col-lg-4">
+                    <div class="container house">
+                        {% for x in houses %}
+                            <div class="container position-relative">
+                                {% if x.sale %}
+                                    <div class="badge bg-light text-black position-absolute p-1" style="top: 10px; left: 20px; font-size: 13px;">Sale</div>
+                                {% endif %}
+                                <img src="{{x.image.url}}" alt="house" class="img-fluid" style="height: 200px; object-fit: cover;">
+                                <p class="mt-2"><i class="bi bi-geo-alt-fill me-1"></i>{{x.Location}}</p>
+                                <h3 class="">{{x.Title}}</h3>
+                                <div class="container ps-0 d-flex justify-content-between" style="gap: 2px; font-size: 13px;">
+                                    <p class="d-flex"><i class="bi bi-person-fill me-1"></i>{{x.bed_room}} Bed Room</p>
+                                    <p class="d-flex"><i class="bi bi-bucket-fill me-1"></i>{{x.bath}} Bath</p>
+                                    <p class="d-flex"><i class="bi bi-aspect-ratio me-1"></i>{{x.square_ft|intcomma}} Square ft</p>
+                                </div>
+                                <div class="container ps-0 mt-2 d-flex justify-content-between align-items-center">
+                                    <h4 class="fw-bold" style="font-size: 18px;">&#8358 {{x.Price|intcomma}}</h4>
+                                    <a href="" class="btn btn-success">View details <i class="bi bi-arrow-right" style="gap: 2px;"></i></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
