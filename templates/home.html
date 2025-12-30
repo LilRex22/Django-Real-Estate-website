@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load humanize %}
+{% load static %}
 
 {% block content %}
     <header class="head_bg">
@@ -130,6 +131,92 @@
                         be paid in installments for 5 years.
                     </p>
                     <a href="" class="btn btn-success">see more</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- carousel -->
+        <div class="container mt-5">
+            <div class="carousel slide" data-bs-ride="carousel" id="multi-carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/beige-green-building-day.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Konga Agreste Lounge</p>
+                            </div>
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/city-background-panoramic-view.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Skyline House</p>
+                            </div>
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/analog-landscape-city-with-buildings.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Gothic cellar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/analog-landscape-city-with-buildings.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Daxville apartment</p>
+                            </div>
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/city-background-panoramic-view.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Detroit Shades</p>
+                            </div>
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/beige-green-building-day.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Beige Green Suite</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/city-background-panoramic-view.jpg' %}" alt="carousel-item" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Passion Confederate</p>
+                            </div>
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/beige-green-building-day.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Pauline Suite</p>
+                            </div>
+                            <div class="col-10 col-lg-4 mt-3 mt-lg-0">
+                                <a href="">
+                                    <img src="{% static 'assets/analog-landscape-city-with-buildings.jpg' %}" alt="carousel-img" class="img-fluid carousel-img-fix">
+                                </a>
+                                <p class="text-white">Aradale Mannor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#multi-carousel">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#multi-carousel">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>
