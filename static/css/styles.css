@@ -48,3 +48,11 @@
     object-fit: cover;
     border-radius: 10px;
 }
+.carousel-indicators [data-bs-target] {
+    background-color: #000 !important;
+    border: none;
+    opacity: 0.5;
+}
+.carousel-indicators .active {
+    opacity: 1;
+}

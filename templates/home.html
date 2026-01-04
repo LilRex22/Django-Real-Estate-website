@@ -4,6 +4,7 @@
 {% load static %}
 
 {% block content %}
+    <!-- header section -->
     <header class="head_bg">
         <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 90vh;">
             <h1 class="text-center mt-5 mb-3 display-3 fw-bold" style="color: rgb(48, 48, 48); padding: 50px 0 20px 0;">Your Reliable Ally in <br>Nationwide Real Estate</h1>
@@ -25,6 +26,8 @@
                         <option value="100000">&#8358 100,000 - &#8358 500,000</option>
                         <option value="500000">&#8358 500,000 - &#8358 1,000,000</option>
                         <option value="1000000">&#8358 1,000,000 - &#8358 5,000,000</option>
+                        <option value="5000000">&#8358 5,000,000 - &#8358 10,000,000</option>
+                        <option value="10000000">&#8358 10,000,000 and above</option>
                     </select>
                 </div>
     
@@ -46,38 +49,37 @@
         </div>
     </header>
 
-
+    <!-- featurted properties -->
     <section class="mt-5">
         <div class="container">
-            <h2 class="text-center my-5" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Featured Properties</h2>
+            <h2 class="text-center my-5 fw-bold" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Featured Properties</h2>
             <div class="row justify-content-center">
-                <div class="col-10 col-lg-4">
-                    <div class="container house">
-                        {% for x in houses %}
-                            <div class="container position-relative">
-                                {% if x.sale %}
-                                    <div class="badge bg-light text-black position-absolute p-1" style="top: 10px; left: 20px; font-size: 13px;">Sale</div>
-                                {% endif %}
-                                <img src="{{x.image.url}}" alt="house" class="img-fluid" style="height: 200px; object-fit: cover;">
-                                <p class="mt-2"><i class="bi bi-geo-alt-fill me-1"></i>{{x.Location}}</p>
-                                <h3 class="">{{x.Title}}</h3>
-                                <div class="container ps-0 d-flex justify-content-between" style="gap: 2px; font-size: 13px;">
-                                    <p class="d-flex"><i class="bi bi-person-fill me-1"></i>{{x.bed_room}} Bed Room</p>
-                                    <p class="d-flex"><i class="bi bi-bucket-fill me-1"></i>{{x.bath}} Bath</p>
-                                    <p class="d-flex"><i class="bi bi-aspect-ratio me-1"></i>{{x.square_ft|intcomma}} Square ft</p>
-                                </div>
-                                <div class="container ps-0 mt-2 d-flex justify-content-between align-items-center">
-                                    <h4 class="fw-bold" style="font-size: 18px;">&#8358 {{x.Price|intcomma}}</h4>
-                                    <a href="" class="btn btn-success">View details <i class="bi bi-arrow-right" style="gap: 2px;"></i></a>
-                                </div>
-                            </div>
-                        {% endfor %}
+                {% for x in houses %}
+                <div class="col-10 col-lg-4 mb-4 d-flex align-items-stretch">
+                    <div class="house position-relative w-100 h-100 p-3">
+                        {% if x.sale %}
+                            <div class="badge bg-light text-black position-absolute p-1" style="top: 20px; left: 20px; font-size: 13px;">Sale</div>
+                        {% endif %}
+                        <img src="{{x.image.url}}" alt="house" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <p class="mt-2"><i class="bi bi-geo-alt-fill me-1"></i>{{x.Location}}</p>
+                        <h3 class="">{{x.Title}}</h3>
+                        <div class="ps-0 d-flex justify-content-between" style="gap: 2px; font-size: 13px;">
+                            <p class="d-flex"><i class="bi bi-person-fill me-1"></i>{{x.bed_room}} Bed Room</p>
+                            <p class="d-flex"><i class="bi bi-bucket-fill me-1"></i>{{x.bath}} Bath</p>
+                            <p class="d-flex"><i class="bi bi-aspect-ratio me-1"></i>{{x.square_ft|intcomma}} Square ft</p>
+                        </div>
+                        <div class="ps-0 mt-2 d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold" style="font-size: 18px;">&#8358 {{x.Price|intcomma}}</h4>
+                            <a href="" class="btn btn-success">View details <i class="bi bi-arrow-right" style="gap: 2px;"></i></a>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}    
             </div>
         </div>
     </section>
 
+    <!-- more info section -->
     <section style="margin-top: 100px;">
         <div class="container">
             <div class="row d-flex justify-content-center justify-content-lg-between">
@@ -118,6 +120,8 @@
         </div>
     </section>
 
+
+    <!-- carousel section -->
     <section style="margin-top: 100px; background-color: rgb(49, 49, 49); padding: 20px 0 20px 0;">
         <div class="container">
             <div class="row justify-content-center">
@@ -222,8 +226,10 @@
         </div>
     </section>
 
+
+    <!-- benefits of choosing us section -->
     <section style="margin-top: 100px;">
-        <h3 class="text-center fw-bold">Benefit of Choosing Us</h3>
+        <h2 class="text-center fw-bold">Benefit of Choosing Us</h2>
         <!-- always remember to wrap any row element in a container in order to avoid overflows on the x-axis. -->
         <div class="container mt-5">
             <div class="row justify-content-center">
@@ -254,6 +260,65 @@
                         Transactions are faster and you can get commissions easily.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonial section -->
+    <section style="margin-top: 100px; background-color: rgb(247, 247, 247);">
+        <div class="container mt-5" style="padding-top: 20px; max-width: 50rem; width: 100%;">
+            <h2 class="text-center fw-bold" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Testimonials From Our Clients</h2>
+            
+            <!-- carousel for testimonials -->
+            <div id="carouselExampleIndicators" class="carousel slide" style="height: 270px; position: relative; max-width: 100%; width: 100%;">
+                
+                <div class="carousel-indicators" style="position: absolute; bottom: -10px; background-color: transparent; z-index: 3;">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <!-- carousel contents -->
+                <div class="carousel-inner" style="height: 100%; width: 100%; max-width: 100%;">
+                    <div class="carousel-item active" style="height: 100%; width: 100%; max-width: 100%;">
+                        <div class="container-fluid d-flex flex-column justify-content-center align-content-center h-100 p-0" style="max-width: 100%;">
+                            <p class="text-center flex-grow-1 d-flex align-items-center justify-content-center" style="min-height: 100px;">I once bought a house with Riltor agency, I live comfortably with my family. The prices are cheap compared to the value the house provides. Kudos!!, I'm giving a five star.</p>
+                            <div class="d-flex flex-column align-items-center">
+                                <img class="" src="{% static 'assets/beethoven.jpg' %}" alt="user" style="border-radius: 100%; height: 50px; width: 50px;">
+                                <p class="fw-bold">Mike Thannor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="height: 100%; width: 100%; max-width: 100%;">
+                        <div class="container-fluid d-flex flex-column justify-content-center align-content-center h-100 p-0" style="max-width: 100%;">
+                            <p class="text-center flex-grow-1 d-flex align-items-center justify-content-center" style="min-height: 100px;">Riltor is the best real estate company i've seen in this nation. From cheap houses to strategic houses and amenties. It's just wonderful to partner with Riltor for real estate services. They're the best!!.</p>
+                            <div class="d-flex flex-column align-items-center">
+                                <img class="" src="{% static 'assets/sigma.jpg' %}" alt="user" style="border-radius: 100%; height: 50px; width: 50px;">
+                                <p class="fw-bold">Derek Henley</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="height: 100%; width: 100%; max-width: 100%;">
+                        <div class="container-fluid d-flex flex-column justify-content-center align-content-center h-100 p-0" style="max-width: 100%;">
+                            <p class="text-center flex-grow-1 d-flex align-items-center justify-content-center" style="min-height: 100px;">Stunning houses, stunning amenties, stunning looks, stunning everything words can speak enough. This is the best real estate company I've seen in a while. Good job.</p>
+                            <div class="d-flex flex-column align-items-center">
+                                <img class="" src="{% static 'assets/vito.jpg' %}" alt="user" style="border-radius: 100%; height: 50px; width: 50px;">
+                                <p class="fw-bold">Greg White</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- carousel previous and next buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
