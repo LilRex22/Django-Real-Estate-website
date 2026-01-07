@@ -5,6 +5,13 @@
     background-size: cover;
     height: 100vh;
 }
+.head_bg_about{
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/beige-green-building-day.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
 .nav_btn{
     background-color: rgb(255, 255, 90);
     border-radius: 20px;
@@ -55,4 +62,8 @@
 }
 .carousel-indicators .active {
     opacity: 1;
+}
+
+.position{
+    border-bottom: 2px solid rgb(255, 255, 90);
 }
