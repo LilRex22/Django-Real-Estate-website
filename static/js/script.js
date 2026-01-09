@@ -8,6 +8,7 @@ const home = document.getElementById('home');
 const about = document.getElementById('about');
 const contact = document.getElementById('contact');
 
+// homepage navbar logic
 if (homepage){
     home.classList.add('position')
     window.addEventListener('scroll', ()=>{
@@ -22,8 +23,19 @@ if (homepage){
     });
 }
 
+// about page navbar logic
 if (aboutpage){
     about.classList.add('position');
+    window.addEventListener('scroll', ()=>{
+        if (window.scrollY > 0){
+            navbar.classList.add('nav_bg');
+            navbar.classList.remove('nav_tp');
+        }
+        else{
+            navbar.classList.remove('nav_bg');
+            navbar.classList.add('nav_tp');
+        }
+    });
 }
 
 if(contactpage){

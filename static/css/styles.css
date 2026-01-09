@@ -6,7 +6,7 @@
     height: 100vh;
 }
 .head_bg_about{
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/beige-green-building-day.jpg');
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/city-background-panoramic-view.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -55,6 +55,7 @@
     object-fit: cover;
     border-radius: 10px;
 }
+/* the carousel indicator below is a custom of the default bootstrap carousel indicator */
 .carousel-indicators [data-bs-target] {
     background-color: #000 !important;
     border: none;
@@ -64,6 +65,22 @@
     opacity: 1;
 }
 
+/* this is the custom carousel indicator for the about us page */
+#about_carousel [data-bs-target] {
+    background-color: #fff !important;
+    border: none;
+    opacity: 0.5;
+}
+#about_carousel .active {
+    opacity: 1;
+}
+
 .position{
     border-bottom: 2px solid rgb(255, 255, 90);
+}
+
+.video-custom{
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30rem;
 }
