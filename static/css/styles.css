@@ -84,3 +84,88 @@
     overflow: hidden;
     height: 30rem;
 }
+.team-img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (max-width: 767.98px) {
+    .team-img {
+        height: 300px;
+    }
+    .expert-badge {
+        top: 140px !important;
+        min-width: 90px;
+        font-size: 12px;
+    }
+}
+.expert-badge {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 80%;
+    background: white;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    font-size: 12px;
+    z-index: 2;
+}
+/* Base style for expert-badge */
+.expert-badge {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    width: 80%;
+    min-width: 140px;
+    max-width: 90%;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    font-size: 14px;
+    z-index: 2;
+    padding: 0.5rem 0.25rem;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1199.98px) and (min-width: 768px) {
+    .expert-badge {
+        width: 80%;
+        font-size: 14px;
+        bottom: 10px;
+        min-width: 140px;
+        padding: 0.5rem 0.25rem;
+        max-height: 100px;
+
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 767.98px) {
+    .expert-badge {
+        width: 90%;
+        font-size: 13px;
+        bottom: 0;
+        min-width: 100px;
+        padding: 0.4rem 0.2rem;
+        max-height: 100px;
+
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .expert-badge {
+        width: 98%;
+        font-size: 12px;
+        min-width: 80px;
+        padding: 0.3rem 0.1rem;
+        max-height: 100px;
+
+    }
+}

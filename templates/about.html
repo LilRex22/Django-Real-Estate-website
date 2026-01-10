@@ -51,14 +51,14 @@
     <div class="container text-white">
         <div class="row">
             <div class="col-lg-5">
-                <span class="text-success">About Us</span>
+                <span class="text-success fw-bold">About Us</span>
                 <h2>Our Trusted <span class="text-success">Real Estate</span><br>Advisors.</h2>
                 <p>
                     Riltor is not just a real estate agency but a household name
                     in the game. There's no other real estate company dedicated to
-                    your pleasure and comfort as Riltor. The best in the nation
+                    your pleasure and comfort as Riltor. The best in the nation.
                 </p>
-                <a href="" class="btn btn-success">Contact</a>
+                <a href="" class="btn btn-success">Explore</a>
             </div>
 
             <div class="col-lg-3 my-5 my-lg-0">
@@ -132,5 +132,46 @@
     </div>
 </section>
 
+
+<!-- section for meet our real estate team -->
+<section class="my-5">
+    <div class="container">
+
+        <div class="container d-flex justify-content-between align-items-end">
+            <div class="container">
+                <p class="text-success fw-bold">Our Experts</p>
+                <h2 class="fw-bold">Meet Our Real Estate Team</h2>
+            </div>
+
+            <a href="" class="btn btn-success">Contact</a>
+        </div>
+
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 mb-4 position-relative d-flex flex-column align-items-center mt-4 mt-lg-0"">
+                    <img src="{% static 'assets/shelby.jpg' %}" alt="experts" class="img-fluid team-img" />
+                    <div class="badge text-black position-absolute w-75 d-flex flex-column align-items-center expert-badge">
+                        <h6 class="mt-2 fw-bold">Teddy Bilford</h6>
+                        <p style="font-size: 12px; color: grey;">Call: 932 414 880</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 position-relative d-flex flex-column align-items-center mt-4 mt-lg-0"">
+                    <img src="{% static 'assets/withuke.jpg' %}" alt="experts" class="img-fluid team-img" />
+                    <div class="badge text-black position-absolute w-75 d-flex flex-column align-items-center expert-badge">
+                        <h6 class="mt-2 fw-bold">Brannon Grey</h6>
+                        <p style="font-size: 12px; color: grey;">Call: 651 112 596</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 position-relative d-flex flex-column align-items-center mt-4 mt-lg-0"">
+                    <img src="{% static 'assets/corleone.jpg' %}" alt="experts" class="img-fluid team-img" />
+                    <div class="badge text-black position-absolute w-75 d-flex flex-column align-items-center expert-badge">
+                        <h6 class="mt-2 fw-bold">Vito Corleone</h6>
+                        <p style="font-size: 12px; color: grey;">Call: 771 394 726</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
