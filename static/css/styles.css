@@ -1,5 +1,5 @@
 .head_bg{
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/beige-green-building-day.jpg');
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/beachfront-bungalow-dusk.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -7,6 +7,13 @@
 }
 .head_bg_about{
     background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/city-background-panoramic-view.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.head_bg_contact{
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/beige-green-building-day.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

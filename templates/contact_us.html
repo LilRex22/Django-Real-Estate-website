@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<header class="head_bg_contact">
+    <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh;"">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h1 class="text-lg-end display-3 fw-bolder">Contact Us</h1>
+            </div>
+
+            <div class="col-lg-4 text-center text-lg-start">
+                <h5 class="fw-bold mt-3 mt-lg-0">Crafting Spaces That Inspires</h5>
+                <p style="color: rgb(255, 255, 90);">We provide you with quality homes and apartments that blend with
+                    your style, needs and wants.
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- get in touch section -->
+<section style="margin-top: 100px; margin-bottom: 100px;">
+    <div class="container">
+        <div class="row justify-content-around">
+            <div class="col-lg-5">
+                <span class="text-success fw-bold">Get In Touch</span>
+                <h2 class="fw-bold display-6">How We Can <br>Help You?</h2>
+                <p style="border-bottom: 2px solid black; padding-bottom: 30px;">
+                    We value our Customers and their feedbacks,
+                    let us know what you needs are and we'll be right at it.
+                    We're a call away!.
+                </p>
+                <div class="container ps-0">
+                    <div class="container ps-0 d-flex">
+                        <div class="container text-dark d-flex ps-0">
+                            <i class="bi bi-building fs-1"></i>
+                            <div class="container">
+                                <p class="text-success fw-bold">Headquarters</p>
+                                <h5 style="margin-top: -10px; font-size: 18px;">Lekki, Lagos NG</h5>
+                            </div>
+                        </div>
+
+                        <div class="container text-dark d-flex ps-0">
+                            <i class="bi bi-telephone fs-1"></i>
+                            <div class="container">
+                                <p class="text-success fw-bold">General Inquiries</p>
+                                <h5 style="margin-top: -10px;">994-271-8964</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 p-3 mt-5 mt-lg-0" style="border-radius: 10px; background-color: rgb(247, 247, 247);">
+                <form action="" method="post"> {% csrf_token %}
+                    <div class="container d-flex ps-0">
+                        <div class="container ps-0">
+                            <label for="Name" class="fw-bold mb-2">First Name</label>
+                            <input type="text" name="fname" id="Name" placeholder="first name" class="form-control mb-3">
+        
+                            <label for="Email" class="fw-bold mb-2">Email</label>
+                            <input type="email" name="email" id="Email" placeholder="your-email@gmail.com" class="form-control">
+                        </div>
+    
+                        <div class="container px-0">
+                            <label for="lName" class="fw-bold mb-2">Last Name</label>
+                            <input type="text" name="lname" id="lName" placeholder="last name" class="form-control mb-3">
+        
+                            <label for="Phone" class="fw-bold mb-2">Phone</label>
+                            <input type="number" name="phone" id="Phone" placeholder="phone" class="form-control">
+                        </div>
+                    </div>
+                    <label for="Message" class="fw-bold mt-3">Message</label>
+                    <textarea name="message" id="Message" cols="20" rows="2" class="form-control mt-3" placeholder="your message"></textarea>
+                    <button type="submit" class="btn btn-success mt-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- faq section -->
+<section>
+    <div class="container d-flex flex-column justify-content-center">
+        <h2 class="text-center">Frequently Asked Questions: <br> We're Here to Help</h2>
+        <div class="row justify-content-around my-5">
+            <div class="col-lg-8">
+                <!-- accordion for the faq -->
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            What services do you offer?
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">We recommend and sell housing properties all over the nation. We also
+                            also manage real-estate properties ranging from apartment buildings to multi-housing complexes.
+                            We're here for you!.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            How do I get started with your company?
+                        </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            To get started with our company, first contact our customer service to initiate safe and
+                            secure customer negotiation and pricings. Our customer service team is ready to open
+                            trades with you!.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Do you provide a free tour of the property?
+                        </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            Yes we do!. When a trade has been secured through our customer service, we have a
+                            specialized team of real-estate agents ready to give you a tour of the property.
+                            The details like the time and scheduling of the tour will be communicated to you
+                            through our customer service on securing of the trade.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Can I make changes to the property?
+                        </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            Yes you can!. Once the property has been purchased and all the necessary documents are in place, you can make changes to the property to sooth your taste.
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
