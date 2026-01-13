@@ -18,3 +18,11 @@ class House(models.Model):
     
     def __str__(self):
         return self.Title
+    
+    
+class Newsletter_Email(models.Model):
+    email = models.EmailField(max_length=200)
+    verified = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.email

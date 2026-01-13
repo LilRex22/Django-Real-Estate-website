@@ -15,6 +15,18 @@
 <body class="d-flex flex-column min-vh-100">
     {% include 'navbar.html' %}
 
+    <!-- the messages block -->
+    <div class="msg">
+        {% if messages %}
+            {% for m in messages %}
+                <!-- refer to settings.py for the changes made to enable bootstrap's alert-danger class -->
+                <div class="alert alert-{{ m.tags }} alert-dismissible fade show" role="alert">
+                    {{ m }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
     {% block content %}
 
@@ -63,10 +75,14 @@
                         events weekly in your mailbox. Whenever you like with one click.
                     </p>
                     <!-- form to submit user email for updates -->
-                    <form action="" class="d-lg-flex gap-2">
-                        <input type="email" name="" id="" class="form-control" placeholder="Your email here">
-                        <button type="submit" class="btn btn-success mt-4 mt-lg-0">Submit</button>
-                    </form>
+                    {% if not newsletter_verified %}
+                        <form class="d-lg-flex gap-2" method="post"> {% csrf_token %}
+                            <input type="email" name="newsletter_email" id="" class="form-control" placeholder="Your email here">
+                            <button type="submit" class="btn btn-success mt-4 mt-lg-0" name="newsletter">Submit</button>
+                        </form>
+                    {% else %}
+                        <h5>You are subscribed to our newsletter.</h5>
+                    {% endif %}
                 </div>
             </div>
 

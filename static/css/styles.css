@@ -91,6 +91,14 @@
     overflow: hidden;
     height: 30rem;
 }
+.msg{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 4rem;
+}
+
+
 .team-img {
     height: 300px;
     width: 100%;
