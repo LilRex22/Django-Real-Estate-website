@@ -91,3 +91,8 @@ def activate(request, uidb64, token):
         return HttpResponse('Your email has been verified successfully!', status=200)
     else:
         return HttpResponse('Activation link is invalid!', status=400)
+
+
+def explore(request):
+    houses = House.objects.all()
+    return render(request, 'explore_properties.html', {'houses': houses})

@@ -1,46 +1,17 @@
-const homepage = window.location.pathname === '/';
-const aboutpage = window.location.pathname === '/about_us/';
-const contactpage = window.location.pathname === '/contact_us/';
-
 
 const navbar = document.querySelector('.navbar');
-const home = document.getElementById('home');
-const about = document.getElementById('about');
-const contact = document.getElementById('contact');
 
-// homepage navbar logic
-if (homepage){
-    home.classList.add('position')
-    window.addEventListener('scroll', ()=>{
-        if (window.scrollY > 0){
-            navbar.classList.add('nav_bg');
-            navbar.classList.remove('nav_tp');
-        }
-        else{
-            navbar.classList.remove('nav_bg');
-            navbar.classList.add('nav_tp');
-        }
-    });
-}
+const pages = {
+    '/': document.getElementById('home'),
+    '/about_us/': document.getElementById('about'),
+    '/contact_us/': document.getElementById('contact'),
+    '/explore/': document.getElementById('explore'),
+};
 
-// about page navbar logic
-if (aboutpage){
-    about.classList.add('position');
-    window.addEventListener('scroll', ()=>{
-        if (window.scrollY > 0){
-            navbar.classList.add('nav_bg');
-            navbar.classList.remove('nav_tp');
-        }
-        else{
-            navbar.classList.remove('nav_bg');
-            navbar.classList.add('nav_tp');
-        }
-    });
-}
+const currentPage = window.location.pathname;  // this will return either one of the pages keys
 
-// contact page navbar logic
-if(contactpage){
-    contact.classList.add('position');
+if (pages[currentPage]) {   // pages['/' or 'about_us/' or 'contact_us/'] which is the value of the currentpage
+    pages[currentPage].classList.add('position');
     window.addEventListener('scroll', ()=>{
         if (window.scrollY > 0){
             navbar.classList.add('nav_bg');

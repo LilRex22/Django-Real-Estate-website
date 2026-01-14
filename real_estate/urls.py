@@ -25,5 +25,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about_us/', views.about, name='about'),
     path('contact_us/', views.contact_us, name='contact'),
+    path('explore/', views.explore, name='explore'),
     path('newsletter/activate/<uidb64>/<token>/', views.activate, name='activate'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

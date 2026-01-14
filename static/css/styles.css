@@ -19,6 +19,13 @@
     background-size: cover;
     height: 100vh;
 }
+.head_bg_explore{
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.1) 0%, rgba(92, 77, 66, 0.3) 100%), url('../assets/outside.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
 .nav_btn{
     background-color: rgb(255, 255, 90);
     border-radius: 20px;
