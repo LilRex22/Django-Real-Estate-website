@@ -8,32 +8,41 @@ from django.utils.http import urlsafe_base64_decode
 from django.http import HttpResponse
 from .tokens import email_verification_token
 
+# pagination stuff
+from django.core.paginator import Paginator
+
 
 # note that the form logic for the newsletter email has to be in every view for it to work from every view
 def home(request):
     houses = House.objects.all()[:6]
     if request.method == 'POST':
         email = request.POST.get('newsletter_email')
-        success, message = subscribe_newsletter(request, email)
-        if success:
-            messages.success(request, message)
-            return redirect('home')
+        if email:
+            success, message = subscribe_newsletter(request, email)
+            if success:
+                messages.success(request, message)
+                return redirect('home')
+            else:
+                messages.error(request, message)
+                return redirect('home')
         else:
-            messages.error(request, message)
-            return redirect('home')
+            messages.error(request, 'Please input an email')
     return render(request, 'home.html', {'houses': houses})
 
 
 def about(request):
     if request.method == 'POST':
         email = request.POST.get('newsletter_email')
-        success, message = subscribe_newsletter(request, email)
-        if success:
-            messages.success(request, message)
-            return redirect('home')
+        if email:
+            success, message = subscribe_newsletter(request, email)
+            if success:
+                messages.success(request, message)
+                return redirect('home')
+            else:
+                messages.error(request, message)
+                return redirect('home')
         else:
-            messages.error(request, message)
-            return redirect('about')
+            messages.error(request, 'Please input an email')
     return render(request, 'about.html', {})
 
 
@@ -43,13 +52,16 @@ def contact_us(request):
     if request.method == 'POST':
         if 'newsletter' in request.POST:
             email = request.POST.get('newsletter_email')
-            success, message = subscribe_newsletter(request, email)
-            if success:
-                messages.success(request, message)
-                return redirect('home')
+            if email:
+                success, message = subscribe_newsletter(request, email)
+                if success:
+                    messages.success(request, message)
+                    return redirect('home')
+                else:
+                    messages.error(request, message)
+                    return redirect('home')
             else:
-                messages.error(request, message)
-                return redirect('contact')
+                messages.error(request, 'Please input an email')
     
     # the contact email message logic
     if request.method == 'POST':
@@ -95,4 +107,10 @@ def activate(request, uidb64, token):
 
 def explore(request):
     houses = House.objects.all()
-    return render(request, 'explore_properties.html', {'houses': houses})
+    
+    # pagination stuff
+    pg = Paginator( houses, 15)
+    page = request.GET.get('page')
+    listings = pg.get_page(page)
+    
+    return render(request, 'explore_properties.html', {'houses': houses, 'listings': listings})

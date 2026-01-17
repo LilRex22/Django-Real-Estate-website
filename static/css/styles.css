@@ -154,6 +154,20 @@
     padding: 0.5rem 0.25rem;
 }
 
+.pagination .page-link {
+    color: grey;
+}
+.pagination .page-item.active .page-link {
+    background-color: rgb(25, 135, 84);
+    border-color: rgb(25, 135, 84);
+    color: white;
+}
+
+
+
+
+
+
 /* Medium screens (tablets) */
 @media (max-width: 1199.98px) and (min-width: 768px) {
     .expert-badge {

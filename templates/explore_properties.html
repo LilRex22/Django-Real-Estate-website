@@ -69,7 +69,7 @@
 <section class="bg-dark p-3 mb-4 mt-0">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            {% for house in houses %}
+            {% for house in listings %}
                     <div class="col-10 col-lg-4 mb-4 d-flex align-items-stretch">
                         <div class="house position-relative w-100 h-100 p-3 bg-white">
                             {% if house.sale %}
@@ -93,4 +93,29 @@
         </div>
     </div>
 </section>
+
+<!-- pagination -->
+<nav aria-label="...">
+    <ul class="pagination justify-content-center">
+        <div class="pagination text-dark">
+            {% if listings.has_previous %}
+                <li class="page-item"><a href="?page={{listings.previous_page_number}}" class="page-link">Previous</a></li>
+                <li class="page-item"><a href="?page=1" class="page-link">First</a></li>
+            {% endif %}
+
+            {% for num in listings.paginator.page_range %}
+                {% if listings.number == num %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% else %}
+                    <li class="page-item"><a href="?page={{ num }}" class="page-link">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if listings.has_next %}
+                <li class="page-item"><a href="?page={{listings.next_page_number}}" class="page-link">Next</a></li>
+                <li class="page-item"><a href="?page={{listings.paginator.num_pages}}" class="page-link">Last</a></li>
+            {% endif %}
+        </div>
+    </ul>
+</nav>
 {% endblock %}
