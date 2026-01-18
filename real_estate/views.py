@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from houses.models import House, Newsletter_Email
+from houses.models import House, Newsletter_Email, Category
 from django.contrib import messages
 from django.conf import settings
 from django.core.mail import EmailMessage
@@ -107,10 +107,47 @@ def activate(request, uidb64, token):
 
 def explore(request):
     houses = House.objects.all()
+    types = Category.objects.all()
+    
+    # the sorting logic
+    sort = request.GET.get("sort", "newest")
+    ordering_map = {
+        "price_asc": "Price",
+        "price_desc": "-Price",
+        "newest": "-created_at",
+    }
+    order_by = ordering_map.get(sort, "-created_at")
+    houses = houses.order_by(order_by)
+    
+    # the filtered search logic
+    house_type = request.GET.get('type')
+    price = request.GET.get('price')
+    location = request.GET.get('location')
+    
+    if house_type:
+        # because category itself is a queryset, we do category__name which is like doing category.name
+        houses = houses.filter(category__name__iexact=house_type)
+        
+    if location:
+        houses = houses.filter(Location__icontains=location)
+        
+    if price:
+        price = int(price) # this converts the price string to an integer for comparison
+        if price == 1000000:
+            houses = houses.filter(Price__gte=1000000, Price__lte=5000000)
+        elif price == 5000000:
+            houses = houses.filter(Price__gte=5000000, Price__lte=10000000)
+        elif price == 10000000:
+            houses = houses.filter(Price__gte=10000000, Price__lte=50000000)
+        elif price == 50000000:
+            houses = houses.filter(Price__gte=50000000, Price__lte=100000000)
+        elif price == 100000000:
+            houses = houses.filter(Price__gte=100000000)
+
     
     # pagination stuff
-    pg = Paginator( houses, 15)
+    pg = Paginator(houses, 15)
     page = request.GET.get('page')
     listings = pg.get_page(page)
     
-    return render(request, 'explore_properties.html', {'houses': houses, 'listings': listings})
+    return render(request, 'explore_properties.html', {'houses': houses, 'listings': listings, 'types': types})

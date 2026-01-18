@@ -21,6 +21,7 @@ class House(models.Model):
     bathroom = models.ImageField(null=True)
     bedroom = models.ImageField(null=True)
     sale = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.Title
