@@ -151,3 +151,8 @@ def explore(request):
     listings = pg.get_page(page)
     
     return render(request, 'explore_properties.html', {'houses': houses, 'listings': listings, 'types': types})
+
+
+def detail(request, house_id):
+    house = House.objects.get(id=house_id)
+    return render(request, 'details.html', {'house': house})

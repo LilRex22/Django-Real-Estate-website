@@ -10,6 +10,10 @@ const pages = {
 
 const currentPage = window.location.pathname;  // this will return either one of the pages keys
 
+if (currentPage.includes('/house_detail/')) {
+    navbar.classList.remove('fixed-top')
+}
+
 if (pages[currentPage]) {   // pages['/' or 'about_us/' or 'contact_us/'] which is the value of the currentpage
     pages[currentPage].classList.add('position');
     window.addEventListener('scroll', ()=>{
