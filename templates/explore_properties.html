@@ -102,7 +102,7 @@
                             </div>
                             <div class="ps-0 mt-2 d-flex justify-content-between align-items-center">
                                 <h4 class="fw-bold" style="font-size: 18px;">&#8358 {{house.Price|intcomma}}</h4>
-                                <a href="" class="btn btn-success">View details <i class="bi bi-arrow-right" style="gap: 2px;"></i></a>
+                                <a href="{% url 'detail' house.id %}" class="btn btn-success">View details <i class="bi bi-arrow-right" style="gap: 2px;"></i></a>
                             </div>
                         </div>
                     </div>
